@@ -1,11 +1,11 @@
 extends KinematicBody
 
 
-const WALK_SPEED:float = 10.0
-const SPRINT_SPEED:float = 20.0
+const WALK_SPEED:float = 50.0
+const SPRINT_SPEED:float = 50.0
 
 
-export var speed = 10
+export var speed = 20
 export var accel = 10
 export var gravity = 50
 export var jump = 30
