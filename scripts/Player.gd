@@ -40,13 +40,13 @@ func _physics_process(delta):
 #		speed = SPRINT_SPEED
 #	else:
 #		speed = WALK_SPEED
-
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	else:
-		velocity.y -= 0.03 * delta
+	velocity.y -= gravity * delta
+#	if not is_on_floor():
+#		velocity.y -= gravity * delta
+#	else:
+#		velocity.y -= 0.03 * delta
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") && is_on_floor():
 		velocity.y = jump
 	
 	move_dir = Vector3(
