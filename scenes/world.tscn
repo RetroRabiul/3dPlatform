@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -375,7 +376,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform5/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform4" type="MeshInstance" parent="Easy Platforms"]
@@ -398,7 +398,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform6"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform6/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform7" type="MeshInstance" parent="Easy Platforms"]
@@ -421,7 +420,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform8"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform8/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform9" type="MeshInstance" parent="Easy Platforms"]
@@ -565,7 +563,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform10"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform10/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform12" type="MeshInstance" parent="Easy Platforms"]
@@ -577,7 +574,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform12"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform12/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform14" type="MeshInstance" parent="Easy Platforms"]
@@ -589,7 +585,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform14"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform14/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform16" type="MeshInstance" parent="Easy Platforms"]
@@ -613,7 +608,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform20"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform20/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform22" type="MeshInstance" parent="Easy Platforms"]
@@ -625,7 +619,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform22"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform22/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform24" type="MeshInstance" parent="Easy Platforms"]
@@ -637,7 +630,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform24"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform24/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform26" type="MeshInstance" parent="Easy Platforms"]
@@ -649,7 +641,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform26"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform26/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform28" type="MeshInstance" parent="Easy Platforms"]
@@ -661,7 +652,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform28"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform28/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform30" type="MeshInstance" parent="Easy Platforms"]
@@ -673,7 +663,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform30"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform30/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform32" type="MeshInstance" parent="Easy Platforms"]
@@ -696,7 +685,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform33"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform33/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform34" type="MeshInstance" parent="Easy Platforms"]
@@ -719,7 +707,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform35"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform35/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform36" type="MeshInstance" parent="Easy Platforms"]
@@ -742,7 +729,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform37"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform37/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform38" type="MeshInstance" parent="Easy Platforms"]
@@ -766,7 +752,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform39"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform39/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform40" type="MeshInstance" parent="Easy Platforms"]
@@ -803,7 +788,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform49" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -83.8742, 129.741, -202.499 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -81.0727, 129.741, -153.928 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -834,7 +819,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform41"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform41/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform42" type="MeshInstance" parent="Easy Platforms"]
@@ -846,7 +830,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform42"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform42/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform44" type="MeshInstance" parent="Easy Platforms"]
@@ -858,7 +841,6 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform44"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform44/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform46" type="MeshInstance" parent="Easy Platforms"]
@@ -870,11 +852,10 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform46"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform46/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform48" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -73.3878, 126.377, -188.288 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -73.3878, 126.377, -167.85 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -882,11 +863,10 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform48"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform48/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform50" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -96.4745, 135.764, -227.943 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -103.287, 135.764, -135.186 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -897,7 +877,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform51" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -92.0356, 132.399, -213.733 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -92.0356, 132.399, -143.894 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -905,11 +885,11 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform51"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform51/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform52" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -116.208, 141.937, -249.624 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -125.512, 141.937, -153.034 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -919,8 +899,63 @@ material/0 = SubResource( 23 )
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform52/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="Platform55" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -132.37, 147.992, -175.203 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform55"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform55/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform57" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 152.292, -182.371 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform57"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform57/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform59" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 155.888, -211.579 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform59"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform59/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform61" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 151.842, -239.575 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform61"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform61/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform63" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 147.188, -266.983 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform63"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform63/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="Platform53" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.798, 138.572, -235.414 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -115.129, 138.572, -142.736 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -928,11 +963,10 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform53"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform53/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform54" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -123.144, 145.498, -264.773 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -133.959, 145.498, -161.191 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -940,7 +974,50 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform54"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform54/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Platform56" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -120.245, 150.303, -179.777 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform56"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform56/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform58" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.576, 154.167, -196.644 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform58"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform58/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform60" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.576, 154.167, -225.409 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform60"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform60/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform62" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.576, 149.916, -253.886 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform62"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform62/StaticBody"]
 shape = SubResource( 2 )
 
 [node name="Platform18" type="MeshInstance" parent="Easy Platforms"]
@@ -952,11 +1029,12 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform18"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform18/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731705, 4.91739, 9.43392 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609758, 4.91739, 9.43392 )
+
+[node name="UI" parent="Player" instance=ExtResource( 3 )]
 
 [node name="Wall" type="MeshInstance" parent="."]
 transform = Transform( 1.6507, 0, 0, 0, 108.524, 0, 0, 0, 156.324, 0, 109.09, -194.921 )
