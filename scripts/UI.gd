@@ -8,14 +8,15 @@ var time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.text = "Time : " + str(time);
-	
+	GlobalSignal.connect("start_timer", self, "_start_timer")
 
 
+func _start_timer():
+	$Timer.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Timer.text = "Time : " + str(time)
+	$Time.text = "Time : " + str(GlobalVariables.time)
 
 
 func _on_Timer2_timeout():
-	time += 1
+	GlobalVariables.time += 1

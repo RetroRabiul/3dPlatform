@@ -14,6 +14,11 @@ config/name="3d Platform"
 run/main_scene="res://scenes/world.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalSignal="*res://autoload/global_signal.gd"
+GlobalVariables="*res://autoload/global_variables.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 5, 0.5, 5 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0, 0.854902, 1, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 2.5, 0.25, 2.5 )
+
+[sub_resource type="Curve3D" id=3]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -0.000104681, 0.000240417, -0.0288849, 0, 0, 0, 0, 0, 0, 16.0004, -0.000410751, -0.000488281 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Move_platform"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="Moving_Platform" type="Spatial"]
+
+[node name="Moving_Platform" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8697, -0.000283344, -0.00604433 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Moving_Platform"]
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Moving_Platform"]
+shape = SubResource( 2 )
+
+[node name="Path" type="Path" parent="."]
+curve = SubResource( 3 )
+
+[node name="PathFollow" type="PathFollow" parent="Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000104681, 0.000240417, -0.0288849 )
+
+[node name="RemoteTransform" type="RemoteTransform" parent="Path/PathFollow"]
+remote_path = NodePath("../../../Moving_Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Move_platform"
+anims/Move_platform = SubResource( 4 )
+anims/RESET = SubResource( 5 )
