@@ -1,12 +1,17 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Moving_Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=26]
+size = 466
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=40]
 size = 466
 font_data = ExtResource( 5 )
 
@@ -60,6 +65,9 @@ albedo_color = Color( 0, 0.121569, 0.0117647, 1 )
 [sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 0, 0.541176, 0.482353, 1 )
 
+[sub_resource type="BoxShape" id=41]
+extents = Vector3( 1, 1.49047, 1.13976 )
+
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.462745, 0, 0, 1 )
 
@@ -110,7 +118,7 @@ extents = Vector3( 224.392, 0.759692, 235.512 )
 script = ExtResource( 2 )
 
 [node name="Start" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.95493 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.52654, -7.08814 )
 
 [node name="Notes" type="Spatial" parent="Start"]
 
@@ -119,6 +127,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.05041, 1.06946 )
 modulate = Color( 0.0588235, 0.74902, 0.74902, 1 )
 text = "Start"
 font = SubResource( 26 )
+
+[node name="Start2" type="Label3D" parent="Start/Notes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.83288, -28.0033 )
+modulate = Color( 0.0588235, 0.74902, 0.74902, 1 )
+text = "< Easy
+ Hard >"
+font = SubResource( 40 )
 
 [node name="Controls" type="Label3D" parent="Start/Notes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5113, 34.3153 )
@@ -131,6 +146,7 @@ font = SubResource( 27 )
 [node name="Areas" type="Spatial" parent="Start"]
 
 [node name="Timer_Starts" type="Area" parent="Start/Areas"]
+transform = Transform( 2.89558, 0, 0, 0, 1, 0, 0, 0, 1, 1.15691, 0.808342, -31.5024 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Start/Areas/Timer_Starts"]
 transform = Transform( 1, 0, 0, 0, 0.674981, 0, 0, 0, 1, 0, 8.79562, 0.439689 )
@@ -211,6 +227,76 @@ material/0 = SubResource( 6 )
 [node name="CollisionShape" type="CollisionShape" parent="Platform/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="Platform2" type="MeshInstance" parent="."]
+transform = Transform( 11.4494, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -0.000636101, 15.6678, -35.8057 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform3" type="MeshInstance" parent="."]
+transform = Transform( 3.25995, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, 24.0452, 15.6678, -35.8057 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform4" type="MeshInstance" parent="."]
+transform = Transform( 3.25995, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -24.0392, 15.6678, -35.8057 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform7" type="MeshInstance" parent="."]
+transform = Transform( -1.42497e-07, 0.700287, -3.00796e-07, 0, -3.06105e-08, -6.8814, -6.39972, -6.00925e-08, 2.58116e-14, -26.6348, 15.6678, -28.8136 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform7/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform8" type="MeshInstance" parent="."]
+transform = Transform( -1.42497e-07, 0.700287, -3.00796e-07, 0, -3.06105e-08, -6.8814, -6.39972, -6.00925e-08, 2.58116e-14, 26.577, 15.6678, -28.8136 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform8/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform5" type="MeshInstance" parent="."]
+transform = Transform( 9.76891, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -17.4976, 15.6678, -22.0997 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform6" type="MeshInstance" parent="."]
+transform = Transform( 9.76891, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, 17.5046, 15.6678, -22.0836 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Platform6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform6/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="EndingPlatform" type="MeshInstance" parent="."]
 transform = Transform( 140.525, 0, 0, 0, 0.700287, 0, 0, 0, 17.1428, 0.899952, 146.423, -292.992 )
 mesh = SubResource( 14 )
@@ -220,6 +306,11 @@ material/0 = SubResource( 15 )
 
 [node name="CollisionShape" type="CollisionShape" parent="EndingPlatform/StaticBody"]
 shape = SubResource( 2 )
+
+[node name="WinningArea" type="Area" parent="EndingPlatform"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EndingPlatform/WinningArea"]
+shape = SubResource( 41 )
 
 [node name="Hard Platforms" type="Spatial" parent="."]
 
@@ -479,7 +570,7 @@ shape = SubResource( 2 )
 [node name="Easy Platforms" type="Spatial" parent="."]
 
 [node name="Platform3" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -19.2549, 11.6447, -44.625 )
+transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -19.2549, 8.04931, -44.625 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1154,7 +1245,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609758, 4.91739, 44.78 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609758, 10.7228, 44.78 )
 
 [node name="UI" parent="Player" instance=ExtResource( 3 )]
 
@@ -1185,5 +1276,12 @@ shape = SubResource( 22 )
 [node name="Moving_Platform" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.7564, 10.4807, -30.4325 )
 
+[node name="Door" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0788, 9.03188, -35.8638 )
+
+[node name="Door2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0865, 9.03188, -35.8638 )
+
 [connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
+[connection signal="body_entered" from="EndingPlatform/WinningArea" to="." method="_on_WinningArea_body_entered"]
 [connection signal="body_entered" from="GameOver/Area" to="." method="_on_Area_body_entered"]

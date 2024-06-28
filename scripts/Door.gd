@@ -1,4 +1,4 @@
-extends Spatial
+extends MeshInstance
 
 
 # Declare member variables here. Examples:
@@ -18,15 +18,9 @@ func _ready():
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("player"):
-		get_tree().change_scene("res://scenes/world.tscn")
-		GlobalVariables.time = 0
+		$"%DoorAnim".play("Open")
 
 
-func _on_Timer_Starts_body_entered(body):
+func _on_Area_body_exited(body):
 	if body.is_in_group("player"):
-		GlobalSignal.emit_signal("start_timer")
-
-
-func _on_WinningArea_body_entered(body):
-	if body.is_in_group("player"):
-		GlobalSignal.emit_signal("stop_timer")
+		$"%DoorAnim".play("Close")
