@@ -1,10 +1,8 @@
 extends MeshInstance
 
+var open_door = false
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+#onready var anim = $"%DoorAnim"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,9 +16,27 @@ func _ready():
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("player"):
-		$"%DoorAnim".play("Open")
+		if open_door == false :
+			$"%DoorAnim".play("Open")
+#			var tween = create_tween()
+#			tween.tween_property($"%DoorAnim", "current_animation","Open",0)
+#			yield($"%DoorAnim", "finished")
+			open_door = true
 
 
 func _on_Area_body_exited(body):
 	if body.is_in_group("player"):
-		$"%DoorAnim".play("Close")
+		if open_door == true:
+			$"%DoorAnim".play("Close")
+#			var tween2 = create_tween()
+#			tween2.tween_property($"%DoorAnim", "current_animation","Close")
+#			yield($"%DoorAnim", "finished")
+			open_door = false
+
+#	var tween = create_tween()
+#	tween.tween_property($CPUParticles2D, "modulate:a", 0.0, 1.0)
+#	yield(tween, "finished")
+#	visible = false
+
+
+

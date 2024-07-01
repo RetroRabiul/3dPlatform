@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
@@ -55,10 +55,45 @@ albedo_color = Color( 0.431373, 0.466667, 0.956863, 1 )
 [sub_resource type="SpatialMaterial" id=39]
 albedo_color = Color( 0.00392157, 0.0627451, 0.156863, 1 )
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=42]
 
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0, 0.121569, 0.0117647, 1 )
+[sub_resource type="SpatialMaterial" id=43]
+albedo_color = Color( 0.247059, 0.25098, 0.705882, 1 )
+
+[sub_resource type="CubeMesh" id=44]
+
+[sub_resource type="SpatialMaterial" id=45]
+albedo_color = Color( 0.176471, 0.219608, 0.227451, 1 )
+
+[sub_resource type="CubeMesh" id=46]
+
+[sub_resource type="SpatialMaterial" id=47]
+albedo_color = Color( 0.176471, 0.219608, 0.227451, 1 )
+
+[sub_resource type="CubeMesh" id=48]
+
+[sub_resource type="SpatialMaterial" id=49]
+albedo_color = Color( 0.176471, 0.219608, 0.227451, 1 )
+
+[sub_resource type="CubeMesh" id=50]
+
+[sub_resource type="SpatialMaterial" id=51]
+albedo_color = Color( 0.662745, 0.270588, 0.658824, 1 )
+
+[sub_resource type="CubeMesh" id=52]
+
+[sub_resource type="SpatialMaterial" id=53]
+albedo_color = Color( 0.0980392, 0.247059, 0.482353, 1 )
+
+[sub_resource type="CubeMesh" id=54]
+
+[sub_resource type="SpatialMaterial" id=55]
+albedo_color = Color( 0.164706, 0.701961, 0.729412, 1 )
+
+[sub_resource type="CubeMesh" id=56]
+
+[sub_resource type="SpatialMaterial" id=57]
+albedo_color = Color( 0.0823529, 0.364706, 0.282353, 1 )
 
 [sub_resource type="CubeMesh" id=14]
 
@@ -67,6 +102,8 @@ albedo_color = Color( 0, 0.541176, 0.482353, 1 )
 
 [sub_resource type="BoxShape" id=41]
 extents = Vector3( 1, 1.49047, 1.13976 )
+
+[sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.462745, 0, 0, 1 )
@@ -217,84 +254,103 @@ material/0 = SubResource( 39 )
 [node name="CollisionShape" type="CollisionShape" parent="Start/BackWall/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform" type="MeshInstance" parent="."]
-transform = Transform( 27.3053, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -0.000636101, 8.37128, -29.6699 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform" type="MeshInstance" parent="Start"]
+transform = Transform( 27.3053, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -0.000636101, 1.84474, -22.5818 )
+mesh = SubResource( 42 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 43 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform2" type="MeshInstance" parent="."]
-transform = Transform( 11.4494, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -0.000636101, 15.6678, -35.8057 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform9" type="MeshInstance" parent="Start"]
+transform = Transform( 27.3053, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -0.000636101, 16.5449, -22.8153 )
+mesh = SubResource( 42 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 43 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform2"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform9"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform2/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform9/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform3" type="MeshInstance" parent="."]
-transform = Transform( 3.25995, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, 24.0452, 15.6678, -35.8057 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform2" type="MeshInstance" parent="Start"]
+transform = Transform( 11.4494, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -0.000636101, 9.14126, -28.7176 )
+mesh = SubResource( 44 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 45 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform3"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform2"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform3/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform2/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform4" type="MeshInstance" parent="."]
-transform = Transform( 3.25995, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -24.0392, 15.6678, -35.8057 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform3" type="MeshInstance" parent="Start"]
+transform = Transform( 3.25995, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, 24.0452, 9.14126, -28.7176 )
+mesh = SubResource( 46 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 47 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform4"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform3"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform4/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform3/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform7" type="MeshInstance" parent="."]
-transform = Transform( -1.42497e-07, 0.700287, -3.00796e-07, 0, -3.06105e-08, -6.8814, -6.39972, -6.00925e-08, 2.58116e-14, -26.6348, 15.6678, -28.8136 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform4" type="MeshInstance" parent="Start"]
+transform = Transform( 3.25995, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -24.0392, 9.14126, -28.7176 )
+mesh = SubResource( 48 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 49 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform7"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform4"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform7/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform4/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform8" type="MeshInstance" parent="."]
-transform = Transform( -1.42497e-07, 0.700287, -3.00796e-07, 0, -3.06105e-08, -6.8814, -6.39972, -6.00925e-08, 2.58116e-14, 26.577, 15.6678, -28.8136 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform7" type="MeshInstance" parent="Start"]
+transform = Transform( -1.42497e-07, 0.700287, -3.00796e-07, 0, -3.06105e-08, -6.8814, -6.39972, -6.00925e-08, 2.58116e-14, -26.6348, 9.14126, -21.7255 )
+mesh = SubResource( 50 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 51 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform8"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform7"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform8/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform7/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform5" type="MeshInstance" parent="."]
-transform = Transform( 9.76891, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -17.4976, 15.6678, -22.0997 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform8" type="MeshInstance" parent="Start"]
+transform = Transform( -1.42497e-07, 0.700287, -3.00796e-07, 0, -3.06105e-08, -6.8814, -6.39972, -6.00925e-08, 2.58116e-14, 26.577, 9.14126, -21.7255 )
+mesh = SubResource( 52 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 53 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform5"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform8"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform5/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform8/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Platform6" type="MeshInstance" parent="."]
-transform = Transform( 9.76891, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, 17.5046, 15.6678, -22.0836 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+[node name="Platform5" type="MeshInstance" parent="Start"]
+transform = Transform( 9.76891, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, -17.4976, 9.14126, -15.0116 )
+mesh = SubResource( 54 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 55 )
 
-[node name="StaticBody" type="StaticBody" parent="Platform6"]
+[node name="StaticBody" type="StaticBody" parent="Start/Platform5"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform6/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform6" type="MeshInstance" parent="Start"]
+transform = Transform( 9.76891, 0, 0, 0, -3.06105e-08, -6.8814, 0, 0.700287, -3.00796e-07, 17.5046, 9.14126, -14.9955 )
+mesh = SubResource( 56 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 57 )
+
+[node name="StaticBody" type="StaticBody" parent="Start/Platform6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Start/Platform6/StaticBody"]
 shape = SubResource( 2 )
 
 [node name="EndingPlatform" type="MeshInstance" parent="."]
@@ -581,7 +637,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform5" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -26.1072, 14.7228, -56.5801 )
+transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -30.1484, 14.7228, -56.5801 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -592,7 +648,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform4" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -33.6127, 17.646, -69.9903 )
+transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -38.69, 17.646, -69.9903 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -603,7 +659,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform6" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -40.465, 20.1515, -81.9455 )
+transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -46.3663, 20.1515, -81.9455 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -614,7 +670,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform7" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -36.7235, 22.7239, -94.6378 )
+transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -54.0305, 22.7239, -94.6378 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -625,7 +681,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform8" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -50.7965, 25.0619, -106.593 )
+transform = Transform( 7.68944, 0, 0, 0, 0.700287, 0, 0, 0, 6.8814, -61.6707, 25.0619, -106.593 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -636,7 +692,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform9" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -60.1635, 27.9744, -115.528 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -70.5704, 27.9744, -115.528 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -647,7 +703,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform11" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -86.5495, 32.9305, -115.528 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -94.5167, 32.9305, -118.141 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -658,7 +714,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform13" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -86.5495, 39.0241, -140.928 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -97.7107, 39.0241, -140.928 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -669,7 +725,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform15" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -82.549, 47.238, -165.184 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -92.6206, 47.238, -165.184 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -677,10 +733,11 @@ material/0 = SubResource( 23 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform15"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform15/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform19" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -134.987, 56.0715, -151.504 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -140.401, 56.0715, -188.286 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -691,7 +748,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform21" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -134.301, 59.8885, -121.717 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -160.128, 59.8885, -174.972 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -702,7 +759,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform23" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -139.725, 64.1049, -94.5412 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -167.375, 65.7533, -149.292 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -713,7 +770,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform25" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -164.175, 68.3252, -91.3189 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -185.751, 70.3554, -131.554 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -724,7 +781,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform27" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -182.472, 71.8412, -115.471 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -203.138, 75.8151, -113.786 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -735,7 +792,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform29" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -195.383, 75.453, -140.567 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -224.066, 83.1091, -104.996 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -746,7 +803,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform31" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -189.307, 79.3491, -166.509 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -246.854, 88.9035, -109.172 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -757,7 +814,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform17" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.186, 51.7329, -165.184 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -114.677, 51.7329, -178.875 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -768,7 +825,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform10" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -73.4953, 30.6819, -108.675 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -82.3515, 30.6819, -118.416 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -779,7 +836,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform12" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -99.0244, 35.3644, -125.492 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -102.137, 35.3644, -129.495 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -790,7 +847,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform14" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -77.3551, 44.7194, -150.799 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -89.4887, 44.7194, -150.799 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -801,7 +858,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform16" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -95.1828, 49.9732, -172.715 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -102.498, 49.9732, -172.715 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -813,7 +870,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform20" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -141.794, 58.0349, -136.086 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -152.996, 58.0349, -185.769 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -821,10 +878,11 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform20"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform20/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform22" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -133.073, 61.864, -108.223 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -163.922, 63.4621, -161.607 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -832,10 +890,11 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform22"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform22/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform24" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -152.334, 66.3315, -97.0859 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -173.178, 67.6359, -139.024 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -846,7 +905,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform26" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -175.943, 70.0791, -102.151 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -193.096, 73.2145, -121.809 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -857,7 +916,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform28" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -190.489, 73.541, -128.752 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -212.17, 80.4325, -105.003 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -868,7 +927,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform30" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -197.704, 77.437, -154.219 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -235.692, 85.2582, -107.692 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -879,7 +938,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform32" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -179.814, 84.3655, -190.427 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -271.777, 94.0379, -112.205 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -890,7 +949,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform33" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -185.173, 81.5741, -178.136 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -259.875, 91.4706, -110.946 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -901,7 +960,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform34" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -185.51, 90.5353, -214.861 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -291.298, 102.431, -113.696 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -909,10 +968,11 @@ material/0 = SubResource( 23 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform34"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform34/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform35" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -187.452, 87.0403, -202.57 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -281.46, 98.7547, -113.638 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -923,7 +983,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform36" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -175.258, 95.9572, -241.121 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -311.478, 109.275, -117.38 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -934,7 +994,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform37" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -180.616, 92.9898, -228.83 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -302.587, 105.995, -116.085 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -945,7 +1005,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform38" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -154.373, 101.702, -244.662 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -338.878, 116.558, -120.915 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -957,7 +1017,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform39" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -164.668, 99.2621, -248.319 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -322.464, 113.293, -118.965 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -968,7 +1028,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform40" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -141.148, 107.007, -220.522 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -369.914, 122.635, -122.406 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -979,7 +1039,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform43" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -126.221, 112.635, -204.213 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -394.384, 130.191, -143.121 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -990,7 +1050,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform45" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.502, 118.299, -196.175 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -387.203, 136.092, -177.066 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -998,10 +1058,11 @@ material/0 = SubResource( 23 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform45"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform45/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform49" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -81.0727, 129.741, -153.928 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -377.247, 148.856, -250.026 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1009,11 +1070,11 @@ material/0 = SubResource( 23 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform49"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform49/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform47" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -82.7328, 123.894, -175.443 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -390.999, 143.061, -213.869 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1021,10 +1082,11 @@ material/0 = SubResource( 23 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform47"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform47/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform41" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -147.646, 104.391, -232.534 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -354.89, 119.068, -123.497 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1035,7 +1097,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform42" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -135.756, 109.803, -208.319 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -381.618, 126.162, -135.827 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1046,7 +1108,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform44" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -113.594, 114.624, -207.692 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -398.5, 133.234, -159.433 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1054,10 +1116,11 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform44"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform44/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform46" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -95.7024, 121.409, -185.277 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -395.954, 139.406, -194.161 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1068,7 +1131,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform48" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -73.3878, 126.377, -167.85 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -380.558, 146.13, -231.838 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1076,10 +1139,11 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform48"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform48/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform50" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -103.287, 135.764, -135.186 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -364.901, 155.267, -277.502 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1090,7 +1154,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform51" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -92.0356, 132.399, -143.894 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -374.75, 151.885, -263.487 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1102,7 +1166,7 @@ transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform52" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -125.512, 141.937, -153.034 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -358.049, 162.635, -305.177 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1113,7 +1177,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform55" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -132.37, 147.992, -175.203 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -338.363, 170.448, -316.946 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1124,7 +1188,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform57" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 152.292, -182.371 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -322.101, 176.973, -292.198 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1135,7 +1199,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform59" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 155.888, -211.579 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -314.242, 177.364, -261.221 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1146,7 +1210,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform61" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 151.842, -239.575 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -307.195, 170.204, -229.795 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1157,7 +1221,7 @@ material/0 = SubResource( 23 )
 shape = SubResource( 2 )
 
 [node name="Platform63" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -108.238, 147.188, -266.983 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -269.575, 166.694, -222.917 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 23 )
@@ -1167,8 +1231,30 @@ material/0 = SubResource( 23 )
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform63/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="Platform65" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -235.053, 159.355, -241.921 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform65"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform65/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Platform67" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -193.027, 155.484, -268.242 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform67"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform67/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="Platform53" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -115.129, 138.572, -142.736 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -361.684, 158.023, -294.056 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1176,10 +1262,11 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform53"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform53/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform54" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -133.959, 145.498, -161.191 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -348.701, 166.527, -312.628 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1190,7 +1277,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform56" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -120.245, 150.303, -179.777 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -323.677, 173.567, -308.079 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1201,7 +1288,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform58" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.576, 154.167, -196.644 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -317.566, 180.613, -278.618 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1212,7 +1299,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform60" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.576, 154.167, -225.409 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -310.83, 175.318, -245.8 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1223,7 +1310,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Platform62" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -106.576, 149.916, -253.886 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -290.836, 167.142, -220.651 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1231,10 +1318,47 @@ material/0 = SubResource( 24 )
 [node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform62"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform62/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Platform64" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -252.867, 162.81, -233.29 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform64"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform64/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Platform66" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -216.929, 157.741, -260.518 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform66"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform66/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Platform68" type="MeshInstance" parent="Easy Platforms"]
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -165.429, 153.565, -281.347 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Easy Platforms/Platform68"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Easy Platforms/Platform68/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Platform18" type="MeshInstance" parent="Easy Platforms"]
-transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -122.22, 53.7396, -162.372 )
+transform = Transform( -3.36116e-07, 0, 6.8814, 0, 0.700287, 0, -7.68944, 0, -3.00796e-07, -127.974, 53.7396, -184.72 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 24 )
@@ -1245,7 +1369,7 @@ material/0 = SubResource( 24 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609758, 10.7228, 44.78 )
+transform = Transform( 1.87533, 0, 0, 0, 1.87533, 0, 0, 0, 1.87533, 0, 12.0217, 45.8414 )
 
 [node name="UI" parent="Player" instance=ExtResource( 3 )]
 
@@ -1260,6 +1384,7 @@ material/0 = SubResource( 20 )
 shape = SubResource( 17 )
 
 [node name="GameOver" type="Spatial" parent="."]
+transform = Transform( 4.85266, 0, 0, 0, 1, 0, 0, 0, 4.14411, 0, 0, 0 )
 
 [node name="GameOver" type="MeshInstance" parent="GameOver"]
 transform = Transform( 223.567, 0, 0, 0, -0.653145, 0, 0, 0, 233.415, 0, 0, -122.325 )
@@ -1275,12 +1400,13 @@ shape = SubResource( 22 )
 
 [node name="Moving_Platform" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.7564, 10.4807, -30.4325 )
+visible = false
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0788, 9.03188, -35.8638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0788, 8.77925, -35.8638 )
 
 [node name="Door2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0865, 9.03188, -35.8638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0865, 8.77925, -35.8638 )
 
 [connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
 [connection signal="body_entered" from="EndingPlatform/WinningArea" to="." method="_on_WinningArea_body_entered"]
