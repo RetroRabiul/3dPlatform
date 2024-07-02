@@ -48,9 +48,10 @@ tracks/0/keys = {
 }
 
 [node name="Moving_Platform" type="Spatial"]
+transform = Transform( 2.12631, 0, 0, 0, 2.12631, 0, 0, 0, 2.12631, 0, 0, 0 )
 
 [node name="Moving_Platform" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8697, -0.000283344, -0.00604433 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000104681, 0.000240417, -0.0288849 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Moving_Platform"]
 mesh = SubResource( 1 )
