@@ -27,8 +27,14 @@ var captured: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalSignal.connect("start_sliding", self, "_start_sliding")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	captured = true
+
+func _start_sliding():
+	gravity = 100
+	velocity.z = 2000
+	velocity.y = -1250
 
 
 func _physics_process(delta):
@@ -45,6 +51,10 @@ func _physics_process(delta):
 #		velocity.y -= gravity * delta
 #	else:
 #		velocity.y -= 0.03 * delta
+	if Input.is_action_just_pressed("cng_pos") && is_on_floor():
+		translation.y = 153.117
+		translation.z = -295.651
+	
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		velocity.y = jump
@@ -56,8 +66,13 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x, move_dir.x * speed, accel * delta)
 	velocity.z = lerp(velocity.z, move_dir.z * speed, accel * delta)
 	
-	velocity = move_and_slide(velocity, Vector3.UP)		
-		
+#	velocity = move_and_slide(velocity, Vector3.UP, false)
+	
+	var snap = Vector3.DOWN 
+	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true)
+	
+	
+	
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):

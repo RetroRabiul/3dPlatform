@@ -4,3 +4,4 @@ signal start_timer()
 
 signal stop_timer()
 
+signal start_sliding()
