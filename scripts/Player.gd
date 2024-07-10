@@ -32,9 +32,9 @@ func _ready():
 	captured = true
 
 func _start_sliding():
-	gravity = 100
-	velocity.z = 2000
-	velocity.y = -1250
+	gravity = 500
+#	velocity.z = 500
+#	velocity.y = -1300
 
 
 func _physics_process(delta):

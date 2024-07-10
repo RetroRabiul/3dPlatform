@@ -1,8 +1,9 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Slide2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=6]
 
@@ -150,8 +151,6 @@ albedo_color = Color( 0.027451, 0.737255, 0.72549, 1 )
 [sub_resource type="ConcavePolygonShape" id=71]
 data = PoolVector3Array( 0, 1, 1, 1, -1, 1, -1, -1, 1, 0, 1, -1, -1, -1, -1, 1, -1, -1, 0, 1, 1, 0, 1, -1, 1, -1, 1, 0, 1, -1, 1, -1, -1, 1, -1, 1, 0, 1, -1, 0, 1, 1, -1, -1, -1, 0, 1, 1, -1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="BoxShape" id=76]
-
 [sub_resource type="CubeMesh" id=66]
 
 [sub_resource type="SpatialMaterial" id=67]
@@ -185,6 +184,8 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 
 [sub_resource type="SpatialMaterial" id=62]
 albedo_color = Color( 0.0745098, 0.482353, 0.521569, 1 )
+
+[sub_resource type="BoxShape" id=76]
 
 [node name="world" type="Spatial"]
 script = ExtResource( 2 )
@@ -1444,18 +1445,14 @@ transform = Transform( 1.87533, 0, 0, 0, 1.87533, 0, 0, 0, 1.87533, 0, 12.0217, 
 [node name="UI" parent="Player" instance=ExtResource( 3 )]
 
 [node name="Slop" type="MeshInstance" parent="."]
-transform = Transform( 1.90048e-13, -3.77024e-06, -4.40065, -138.011, -5.23129e-06, 2.93374e-21, -6.03265e-06, 119.678, -2.66902e-07, 0, 9.101, -156.253 )
+transform = Transform( 1.90048e-13, -3.77024e-06, -4.40065, -138.011, -5.23129e-06, 2.93374e-21, -6.03265e-06, 119.678, -2.66902e-07, 285.725, 9.101, -156.253 )
+visible = false
 mesh = SubResource( 70 )
 
 [node name="StaticBody" type="StaticBody" parent="Slop"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Slop/StaticBody"]
 shape = SubResource( 71 )
-
-[node name="SlideArea" type="Area" parent="Slop"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Slop/SlideArea"]
-shape = SubResource( 76 )
 
 [node name="Wall2" type="MeshInstance" parent="."]
 transform = Transform( 1.96083, 0, 0, 0, 90.5075, 0, 0, 0, 123.775, 6.20706, 92.8532, -159.909 )
@@ -1550,8 +1547,19 @@ material/0 = SubResource( 62 )
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
 shape = SubResource( 60 )
 
+[node name="Slide" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.24662e-07, 0, -4.88473, 0, 4.88473, 0, 5.13966, 0, -2.13518e-07, 0.362994, 7.99029, -153.896 )
+
+[node name="SlideArea" type="Area" parent="Slide"]
+transform = Transform( -1.17374e-06, 23.2852, -1.45036e-08, -28.2536, -1.07095e-06, 6.00594e-22, 1.50771e-14, -2.99106e-07, 0.9009, -0.458614, -0.00472903, -0.325354 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Slide/SlideArea"]
+shape = SubResource( 76 )
+
 [connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
 [connection signal="body_exited" from="Start/StartingPlatform/StopSlide" to="." method="_on_StopSlide_body_exited"]
 [connection signal="body_entered" from="EndingPlatform/WinningArea" to="." method="_on_WinningArea_body_entered"]
-[connection signal="body_entered" from="Slop/SlideArea" to="." method="_on_SlideArea_body_entered"]
 [connection signal="body_entered" from="GameOver/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="Slide/SlideArea" to="." method="_on_SlideArea_body_entered"]
+
+[editable path="Slide"]
