@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Slide2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Slide.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=6]
 
@@ -186,6 +186,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 albedo_color = Color( 0.0745098, 0.482353, 0.521569, 1 )
 
 [sub_resource type="BoxShape" id=76]
+extents = Vector3( 0.60768, 1, 1 )
 
 [node name="world" type="Spatial"]
 script = ExtResource( 2 )
@@ -1548,12 +1549,13 @@ material/0 = SubResource( 62 )
 shape = SubResource( 60 )
 
 [node name="Slide" parent="." instance=ExtResource( 4 )]
-transform = Transform( -2.24662e-07, 0, -4.88473, 0, 4.88473, 0, 5.13966, 0, -2.13518e-07, 0.362994, 7.99029, -153.896 )
+transform = Transform( -1.21368e-07, 0, 2.26251, 0, 1.9981, 0, -2.77657, 0, -9.88974e-08, -1.42997e-06, 13.6162, -32.7139 )
 
 [node name="SlideArea" type="Area" parent="Slide"]
-transform = Transform( -1.17374e-06, 23.2852, -1.45036e-08, -28.2536, -1.07095e-06, 6.00594e-22, 1.50771e-14, -2.99106e-07, 0.9009, -0.458614, -0.00472903, -0.325354 )
+transform = Transform( -69.0443, 0, -1.7013e-07, 0, 31.7455, 0, 6.03604e-06, 0, -1.94606, 38.1666, 36.0972, 0.86333 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Slide/SlideArea"]
+transform = Transform( 1, 0, 4.44089e-16, 0, 1, 0, 4.54747e-13, 0, 1, -0.118607, -0.048631, -5.96046e-08 )
 shape = SubResource( 76 )
 
 [connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
