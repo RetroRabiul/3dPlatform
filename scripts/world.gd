@@ -34,7 +34,10 @@ func _on_WinningArea_body_entered(body):
 
 
 func _on_StopSlide_body_exited(body):
-	$"%CollisionShape".disabled = false
+	if body.is_in_group("player"):
+		GlobalSignal.emit_signal("reset")
+		$"%CollisionShape".disabled = false
+	
 
 
 func _on_SlideArea_body_entered(body):

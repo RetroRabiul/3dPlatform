@@ -16,8 +16,8 @@ onready var head: Spatial = $"%Head"
 var move_dir = Vector3.ZERO
 var velocity = Vector3.ZERO
 
-
-
+var jumping = false
+var canjump = true
 var max_angle:float = 80.0
 var min_angle:float = -80.0
 
@@ -28,11 +28,18 @@ var captured: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalSignal.connect("start_sliding", self, "_start_sliding")
+	GlobalSignal.connect("reset", self, "_reset")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	captured = true
 
+func _reset():
+	gravity = 50
+	canjump = true
+	GlobalVariables.time = 0
+
 func _start_sliding():
-	gravity = 500
+	gravity = 1000
+	canjump = false
 #	velocity.z = 500
 #	velocity.y = -1300
 
@@ -57,7 +64,9 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
-		velocity.y = jump
+		if canjump:
+			jumping = true
+			velocity.y = jump
 	
 	move_dir = Vector3(
 		Input.get_axis("left", "right"),0,Input.get_axis("forward", "back")
@@ -67,10 +76,10 @@ func _physics_process(delta):
 	velocity.z = lerp(velocity.z, move_dir.z * speed, accel * delta)
 	
 #	velocity = move_and_slide(velocity, Vector3.UP, false)
-	
-	var snap = Vector3.DOWN 
+#
+	var snap = Vector3.DOWN if not jumping else Vector3.ZERO
 	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true)
-	
+#
 	
 	
 
