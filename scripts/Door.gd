@@ -1,6 +1,5 @@
 extends MeshInstance
 
-var open_door = false
 
 #onready var anim = $"%DoorAnim"
 
@@ -14,29 +13,35 @@ func _ready():
 #	pass
 
 
+
 func _on_Area_body_entered(body):
 	if body.is_in_group("player"):
-		if open_door == false :
+		if GlobalVariables.open_door == false :
 			$"%DoorAnim".play("Open")
 #			var tween = create_tween()
 #			tween.tween_property($"%DoorAnim", "current_animation","Open",0)
 #			yield($"%DoorAnim", "finished")
-			open_door = true
+			
+
 
 
 func _on_Area_body_exited(body):
 	if body.is_in_group("player"):
-		if open_door == true:
-			$"%DoorAnim".play("Close")
-#			var tween2 = create_tween()
-#			tween2.tween_property($"%DoorAnim", "current_animation","Close")
-#			yield($"%DoorAnim", "finished")
-			open_door = false
+		GlobalVariables.open_door == true 
+		$"%DoorAnim".play("Close")
+		call_deferred("door_closed")
+#		var tween2 = create_tween()
+#		tween2.tween_property($"%DoorAnim", "current_animation","Close")
+#		yield($"%DoorAnim", "finished")
+			
+
+func door_closed():
+	GlobalVariables.open_door = false
+
 
 #	var tween = create_tween()
 #	tween.tween_property($CPUParticles2D, "modulate:a", 0.0, 1.0)
 #	yield(tween, "finished")
 #	visible = false
-
 
 

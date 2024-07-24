@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/2k_venus_surface.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/2k_venus_surface3.jpg" type="Texture" id=1]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=3]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.5.stable's SpatialMaterial.
 
 shader_type spatial;
@@ -44,15 +44,15 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 shader_param/albedo = Color( 1, 1, 1, 1 )
 shader_param/specular = 0.5
 shader_param/metallic = 0.0
 shader_param/roughness = 1.0
 shader_param/point_size = 1.0
 shader_param/emission = Color( 0, 0, 0, 1 )
-shader_param/emission_energy = 1.5
+shader_param/emission_energy = 1.0
 shader_param/uv1_scale = Vector3( 1, 1, 1 )
 shader_param/uv1_offset = Vector3( 0, 0, 0 )
 shader_param/uv2_scale = Vector3( 1, 1, 1 )
@@ -60,12 +60,13 @@ shader_param/uv2_offset = Vector3( 0, 0, 0 )
 shader_param/texture_albedo = ExtResource( 1 )
 shader_param/texture_emission = ExtResource( 1 )
 
-[sub_resource type="SphereMesh" id=3]
-material = SubResource( 2 )
-radius = 1000.0
-height = 2000.0
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 4 )
+radius = 500.0
+height = 1000.0
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
+resource_name = "rotate"
 length = 0.001
 loop = true
 tracks/0/type = "value"
@@ -75,33 +76,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
+"values": [  ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "rotate"
-length = 1000.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1000 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
-}
-
-[node name="Star" type="MeshInstance"]
-mesh = SubResource( 3 )
+[node name="Start2" type="MeshInstance"]
+transform = Transform( 0.383646, 0, 0.92348, 0, 1, 0, -0.92348, 0, 0.383646, 0, 0, 0 )
+mesh = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "rotate"
-anims/RESET = SubResource( 4 )
 anims/rotate = SubResource( 5 )

@@ -59,8 +59,9 @@ func _physics_process(delta):
 #	else:
 #		velocity.y -= 0.03 * delta
 	if Input.is_action_just_pressed("cng_pos") && is_on_floor():
-		translation.y = 153.117
-		translation.z = -295.651
+		translation.y = 150
+		translation.z = -383.072
+		
 	
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():

@@ -8,7 +8,7 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"%CollisionShape".disabled = false
+	$"%EndSlideCollision".disabled = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,13 +30,13 @@ func _on_Timer_Starts_body_entered(body):
 func _on_WinningArea_body_entered(body):
 	if body.is_in_group("player"):
 		GlobalSignal.emit_signal("stop_timer")
-		$"%CollisionShape".disabled = true
+		$"%EndSlideCollision".disabled = true
 
 
 func _on_StopSlide_body_exited(body):
 	if body.is_in_group("player"):
 		GlobalSignal.emit_signal("reset")
-		$"%CollisionShape".disabled = false
+		$"%EndSlideCollision".disabled = false
 	
 
 
