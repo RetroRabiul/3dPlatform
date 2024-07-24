@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://assets/blender/blend/FBX/Walls/Accent.material" type="Material" id=35]
 [ext_resource path="res://scenes/Slide5.tscn" type="PackedScene" id=36]
 [ext_resource path="res://scenes/Start2.tscn" type="PackedScene" id=37]
+[ext_resource path="res://scenes/RoofTile_Plate2.tscn" type="PackedScene" id=38]
 
 [sub_resource type="DynamicFont" id=40]
 size = 466
@@ -92,14 +93,6 @@ albedo_color = Color( 0.0901961, 0.25098, 0.505882, 1 )
 
 [sub_resource type="SpatialMaterial" id=43]
 albedo_color = Color( 0.247059, 0.25098, 0.705882, 1 )
-
-[sub_resource type="CubeMesh" id=44]
-
-[sub_resource type="SpatialMaterial" id=45]
-albedo_color = Color( 0.176471, 0.219608, 0.227451, 1 )
-
-[sub_resource type="ConcavePolygonShape" id=72]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
 [sub_resource type="CubeMesh" id=46]
 
@@ -376,17 +369,6 @@ material/0 = SubResource( 39 )
 [node name="CollisionShape" type="CollisionShape" parent="Start/BackWall/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="StartingPlatform" type="MeshInstance" parent="Start"]
-transform = Transform( 30.863, 0, 0, 0, 0.791529, 0, 0, 0, 7.77799, -63.793, 0.887081, -84.2821 )
-mesh = SubResource( 42 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 43 )
-
-[node name="StaticBody" type="StaticBody" parent="Start/StartingPlatform"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Start/StartingPlatform/StaticBody"]
-shape = SubResource( 2 )
-
 [node name="Top2" type="MeshInstance" parent="Start"]
 transform = Transform( 30.863, 0, 0, 0, 0.791529, 0, 0, 0, 7.77799, 123.204, 17.5026, -20.3641 )
 mesh = SubResource( 42 )
@@ -397,17 +379,6 @@ material/0 = SubResource( 43 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Start/Top2/StaticBody"]
 shape = SubResource( 2 )
-
-[node name="CollisionControl" type="MeshInstance" parent="Start"]
-transform = Transform( 12.9412, 0, 0, 0, -3.45988e-08, -8.76888, 0, 0.791529, -3.833e-07, -88.0699, 9.40205, -91.2173 )
-mesh = SubResource( 44 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 45 )
-
-[node name="StaticBody" type="StaticBody" parent="Start/CollisionControl"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Start/CollisionControl/StaticBody"]
-shape = SubResource( 72 )
 
 [node name="Platform3" type="MeshInstance" parent="Start"]
 transform = Transform( 4.2549, 0, 0, 0, -3.45988e-08, -7.77799, 0, 0.791529, -3.39987e-07, 149.779, 9.13428, -28.7949 )
@@ -834,25 +805,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 152.703, 139.947, -375.155 )
 [node name="Easy Platforms" type="Spatial" parent="."]
 
 [node name="FloorTile_Empty6" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6722, 7.504, -133.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.672, 5, -133.105 )
 
 [node name="FloorTile_Empty7" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1484, 11.4014, -146.296 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1484, 8.41968, -146.296 )
 
 [node name="FloorTile_Empty8" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.69, 14.7828, -159.707 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.69, 12.1256, -159.707 )
 
 [node name="FloorTile_Empty9" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1162, 17.7464, -170.027 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1162, 14.7175, -170.027 )
 
 [node name="FloorTile_Empty10" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.5304, 20.7769, -179.469 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.5304, 17.7972, -179.469 )
 
 [node name="FloorTile_Empty11" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.6706, 23.1149, -194.174 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.6706, 22.1878, -194.174 )
 
 [node name="FloorTile_Empty12" parent="Easy Platforms" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.3202, 26.6, -202.359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.3202, 25.7757, -202.359 )
 
 [node name="FloorTile_Empty13" parent="Easy Platforms" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96.3513, 28.7349, -216.247 )
@@ -1309,6 +1280,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.841, 22.687, -128.83 )
 light_energy = 6.236
 omni_range = 26.148
 
+[node name="OmniLight22" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 22.687, -142.969 )
+light_energy = 6.236
+omni_range = 26.148
+
+[node name="OmniLight23" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.687, -142.969 )
+light_energy = 6.236
+omni_range = 26.148
+
+[node name="OmniLight24" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 22.687, -142.969 )
+light_energy = 6.236
+omni_range = 26.148
+
 [node name="OmniLight21" type="OmniLight" parent="Ship_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.3203, -118.769 )
 light_energy = 6.236
@@ -1390,6 +1376,34 @@ transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 21.3
 
 [node name="RoofTile_Plate7" parent="Ship_Roof" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 26.612, -84 )
+visible = false
+
+[node name="RoofTile_Plate8" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -15.7, 26.612, -83.018 )
+
+[node name="RoofTile_Plate9" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 26.612, -83.018 )
+
+[node name="RoofTile_Plate10" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.7, 26.612, -83.018 )
+
+[node name="RoofTile_Plate11" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -15.7, 26.612, -99 )
+
+[node name="RoofTile_Plate12" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 26.612, -99 )
+
+[node name="RoofTile_Plate13" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.7, 26.612, -99 )
+
+[node name="RoofTile_Plate14" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -15.7, 26.612, -115 )
+
+[node name="RoofTile_Plate15" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 26.612, -115 )
+
+[node name="RoofTile_Plate16" parent="Ship_Roof" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.7, 26.612, -115 )
 
 [node name="Ship_Floor" type="Spatial" parent="."]
 
@@ -1459,10 +1473,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -62.5305 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 37.4695 )
 
 [node name="Column_6" parent="Ship_Floor/Columps" instance=ExtResource( 30 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.257, 5, -74.5895 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -74.59 )
 
 [node name="Column_9" parent="Ship_Floor/Columps" instance=ExtResource( 30 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.257, 5, -74.5895 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, -74.59 )
 
 [node name="Column_7" parent="Ship_Floor/Columps" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.257, 5, -97.5305 )
