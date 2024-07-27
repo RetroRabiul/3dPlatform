@@ -564,7 +564,7 @@ shape = SubResource( 41 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3898, 4.8299, -133.063 )
 
 [node name="FloorTile_Empty2" parent="Hard Platforms" instance=ExtResource( 31 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7014, 15.4414, -148.581 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7014, 13.9101, -148.581 )
 
 [node name="FloorTile_Empty3" parent="Hard Platforms" instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.139, 21.1162, -171.025 )

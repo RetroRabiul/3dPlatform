@@ -22,8 +22,8 @@ var max_angle:float = 80.0
 var min_angle:float = -80.0
 
 export var sensitivity: float = 0.2
-
-onready var coyote_timer = $CoyoteTimer
+#
+#onready var coyote_timer = $CoyoteTimer
 
 var captured: bool = true
 
@@ -82,12 +82,12 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
-		if canjump || !coyote_timer.is_stopped():
+		if canjump:
 			jumping = true
 			velocity.y = jump
 	
-	if canjump && !is_on_floor():
-		coyote_timer.start()
+#	if canjump && !is_on_floor():
+#		coyote_timer.start()
 	
 	move_dir = Vector3(
 		Input.get_axis("left", "right"),0,Input.get_axis("forward", "back")
@@ -103,7 +103,6 @@ func _physics_process(delta):
 #
 	
 	
-
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if captured:
