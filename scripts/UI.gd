@@ -13,13 +13,13 @@ func _ready():
 
 func _start_timer():
 	GlobalVariables.stopped = false
-	GlobalVariables.can_collide = true
-	GlobalSignal.emit_signal("collider")
+#	GlobalVariables.can_collide = true
+#	GlobalSignal.emit_signal("collider")
 
 func _stop_timer():
 	GlobalVariables.stopped = true
-	GlobalVariables.can_collide = false
-	GlobalSignal.emit_signal("collider")
+#	GlobalVariables.can_collide = false
+#	GlobalSignal.emit_signal("collider")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

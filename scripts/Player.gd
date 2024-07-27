@@ -22,31 +22,30 @@ var max_angle:float = 80.0
 var min_angle:float = -80.0
 
 export var sensitivity: float = 0.2
-#
-#onready var coyote_timer = $CoyoteTimer
+
 
 var captured: bool = true
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$PlatsCollider.disabled = true
+	
 	GlobalSignal.connect("start_sliding", self, "_start_sliding")
 	GlobalSignal.connect("reset", self, "_reset")
-	GlobalSignal.connect("collider", self, "_collider")
+#	GlobalSignal.connect("collider", self, "_collider")
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	captured = true
-	print($PlatsCollider.disabled)
+	
 
-func _collider():
-
-	if GlobalVariables.can_collide == true:
-		$PlatsCollider.disabled = false
-		print($PlatsCollider.disabled)
-	if GlobalVariables.can_collide == false:
-		$PlatsCollider.disabled = true
-		print($PlatsCollider.disabled)
+#func _collider():
+#
+#	if GlobalVariables.can_collide == true:
+#		$PlatsCollider.disabled = false
+#		print($PlatsCollider.disabled)
+#	if GlobalVariables.can_collide == false:
+#		$PlatsCollider.disabled = true
+#		print($PlatsCollider.disabled)
 
 
 func _reset():
@@ -80,15 +79,19 @@ func _physics_process(delta):
 		translation.z = -383.072
 		
 	
+	if is_on_floor():
+		$CoyoteTimer.stop()
+		canjump = true
+	else:
+		$CoyoteTimer.start()
 	
-	if Input.is_action_just_pressed("jump") && is_on_floor():
-		if canjump:
-			jumping = true
-			velocity.y = jump
 	
-#	if canjump && !is_on_floor():
-#		coyote_timer.start()
+	if Input.is_action_just_pressed("jump") and canjump:
+		canjump = false
+		jumping = true
+		velocity.y = jump
 	
+
 	move_dir = Vector3(
 		Input.get_axis("left", "right"),0,Input.get_axis("forward", "back")
 		).normalized().rotated(Vector3.UP, rotation.y)
@@ -121,3 +124,5 @@ func _input(event):
 		look_rotation.x = clamp(look_rotation.x, min_angle, max_angle)
 		
 
+func _on_CoyoteTimer_timeout():
+	canjump = false
