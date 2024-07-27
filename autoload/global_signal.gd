@@ -6,3 +6,5 @@ signal stop_timer()
 
 signal start_sliding()
 signal reset()
+
+signal collider()

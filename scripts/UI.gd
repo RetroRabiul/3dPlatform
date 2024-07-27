@@ -14,9 +14,13 @@ func _ready():
 
 func _start_timer():
 	$Timer.start()
+	GlobalVariables.can_collide = true
+	GlobalSignal.emit_signal("collider")
 
 func _stop_timer():
 	$Timer.stop()
+	GlobalVariables.can_collide = false
+	GlobalSignal.emit_signal("collider")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

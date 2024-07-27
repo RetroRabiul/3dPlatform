@@ -23,14 +23,31 @@ var min_angle:float = -80.0
 
 export var sensitivity: float = 0.2
 
+onready var coyote_timer = $CoyoteTimer
+
 var captured: bool = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$PlatsCollider.disabled = true
 	GlobalSignal.connect("start_sliding", self, "_start_sliding")
 	GlobalSignal.connect("reset", self, "_reset")
+	GlobalSignal.connect("collider", self, "_collider")
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	captured = true
+	print($PlatsCollider.disabled)
+
+func _collider():
+
+	if GlobalVariables.can_collide == true:
+		$PlatsCollider.disabled = false
+		print($PlatsCollider.disabled)
+	if GlobalVariables.can_collide == false:
+		$PlatsCollider.disabled = true
+		print($PlatsCollider.disabled)
+
 
 func _reset():
 	gravity = 50
@@ -65,9 +82,12 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
-		if canjump:
+		if canjump || !coyote_timer.is_stopped():
 			jumping = true
 			velocity.y = jump
+	
+	if canjump && !is_on_floor():
+		coyote_timer.start()
 	
 	move_dir = Vector3(
 		Input.get_axis("left", "right"),0,Input.get_axis("forward", "back")
