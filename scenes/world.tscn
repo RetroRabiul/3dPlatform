@@ -943,9 +943,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 5,
 [node name="Wall_Empty6" parent="Ship_walls" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 5, -106.031 )
 
-[node name="Wall_Empty7" parent="Ship_walls" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 131.21, 5, -80.9205 )
-
 [node name="Wall_Empty5" parent="Ship_walls" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 5, -93.7155 )
 
@@ -1199,9 +1196,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -146.827 )
 [node name="FloorTile_Basic" parent="Ship_Floor/FloorTiles" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -108.129 )
 
-[node name="FloorTile_Side" parent="Ship_Floor/FloorTiles" instance=ExtResource( 21 )]
-transform = Transform( 0.999999, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 0.999999, -20.6701, 0, 102.821 )
-
 [node name="FloorTile_Basic2" parent="Ship_Floor/FloorTiles" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63.9209 )
 
@@ -1338,15 +1332,6 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10, 2,
 
 [node name="Props_Pod" parent="Ship_Floor/Menu" instance=ExtResource( 24 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -88.1175 )
-
-[node name="Column_3" parent="Ship_Floor/Menu" instance=ExtResource( 26 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.8437, 0, 97.7515 )
-
-[node name="Column_4" parent="Ship_Floor/Menu" instance=ExtResource( 26 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5585, 0, 97.9435 )
-
-[node name="Column_5" parent="Ship_Floor/Menu" instance=ExtResource( 26 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.3298, 0, 69.7075 )
 
 [node name="FloorTile_Empty5" parent="Ship_Floor/Menu" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4502, 18.683, -171.818 )

@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="SpatialMaterial" id=83]
+flags_transparent = true
+albedo_color = Color( 0, 0.647059, 1, 1 )
+
+[sub_resource type="CylinderMesh" id=84]
+material = SubResource( 83 )
+
+[sub_resource type="SpatialMaterial" id=85]
+flags_transparent = true
+albedo_color = Color( 0, 0.764706, 1, 1 )
+roughness = 0.47
+
+[sub_resource type="CylinderMesh" id=86]
+material = SubResource( 85 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+visible = false
+mesh = SubResource( 84 )
+linear_accel = 20.0
+
+[node name="CPUParticles2" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles3" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles4" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles5" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles6" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 5, 1.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles7" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5, 1.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles8" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5, -1.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles9" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 5, -1.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles10" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 5, -2.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles11" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5, -2.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles12" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5, 2.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles13" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 5, 2.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles14" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5, 3.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles15" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5, -3.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles16" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5, -3.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles17" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5, 3.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles18" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 5, 4.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles19" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 5, 4.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles20" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 5, -4.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="CPUParticles21" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 5, -4.5 )
+visible = false
+mesh = SubResource( 84 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 86 )
