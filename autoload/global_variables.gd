@@ -7,3 +7,5 @@ var stopped = true
 var open_door = false
 
 var can_collide = false
+
+var player_name = ""

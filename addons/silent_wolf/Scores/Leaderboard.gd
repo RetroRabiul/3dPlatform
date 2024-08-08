@@ -41,8 +41,21 @@ func render_board(scores, local_scores):
 		for score in scores:
 			add_item(score.player_name, str(int(score.score)))
 	else:
-		for score in all_scores:
-			add_item(score.player_name, str(int(score.score)))
+#		for score in all_scores:
+#			add_item(score.player_name, str(int(score.score)))
+		var size = all_scores.size()-1
+		for i in range(size, -1, -1):
+			add_item(all_scores[i].player_name, time_to_string(all_scores[i].score))
+
+
+func time_to_string(time):
+	var msec = fmod(time, 1) * 100
+	var sec = fmod(time, 60)
+	var mint = time / 60
+	var format_string = "%02d : %02d : %02d"
+	var actual_string = format_string % [mint, sec, msec]
+	return actual_string
+
 
 
 func is_default_leaderboard(ld_config):
@@ -89,29 +102,29 @@ func add_item(player_name, score):
 	item.get_node("PlayerName").text = str(list_index) + str(". ") + player_name
 	item.get_node("Score").text = score
 	item.margin_top = list_index * 100
-	$"Board/HighScores/ScoreItemContainer".add_child(item)
+	$"%ScoreItemContainer".add_child(item)
 
 
 func add_no_scores_message():
-	var item = $"Board/MessageContainer/TextMessage"
+	var item = $"%TextMessage"
 	item.text = "No scores yet!"
-	$"Board/MessageContainer".show()
+	$"%MessageContainer".show()
 	item.margin_top = 135
 
 
 func add_loading_scores_message():
-	var item = $"Board/MessageContainer/TextMessage"
+	var item = $"%TextMessage"
 	item.text = "Loading scores..."
-	$"Board/MessageContainer".show()
+	$"%MessageContainer".show()
 	item.margin_top = 135
 
 
 func hide_message():
-	$"Board/MessageContainer".hide()
+	$"%MessageContainer".hide()
 
 
 func clear_leaderboard():
-	var score_item_container = $"Board/HighScores/ScoreItemContainer"
+	var score_item_container = $"%ScoreItemContainer"
 	if score_item_container.get_child_count() > 0:
 		var children = score_item_container.get_children()
 		for c in children:

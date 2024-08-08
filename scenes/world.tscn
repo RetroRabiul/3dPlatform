@@ -63,7 +63,7 @@ material = SubResource( 81 )
 extents = Vector3( 1.83198, 8.68254, 1 )
 
 [sub_resource type="BoxShape" id=41]
-extents = Vector3( 1, 1.49047, 1.13976 )
+extents = Vector3( 1, 21.412, 1.14 )
 
 [sub_resource type="CubeMesh" id=18]
 
@@ -543,7 +543,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 280, 0,
 transform = Transform( 140.525, 0, 0, 0, 0.700287, 0, 0, 0, 14.058, 143.478, -0.80072, -11.8475 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ending/WinningArea"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40741, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.8165, 0 )
 shape = SubResource( 41 )
 
 [node name="Hard Platforms" type="Spatial" parent="."]
@@ -868,7 +868,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3305.38, 2576.55, -976.468 )
 skeleton = NodePath("../../WorldEnvironment")
 
 [node name="Earth" parent="Stars" instance=ExtResource( 39 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1248.35, 3186.49 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -302.316, 1064.19, 3649.35 )
 
 [node name="Ship_walls" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.8494 )

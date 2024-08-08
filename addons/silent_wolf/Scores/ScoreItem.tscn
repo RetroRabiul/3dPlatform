@@ -33,11 +33,13 @@ margin_right = 589.0
 margin_bottom = 73.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "1. Godzilla"
+fit_content_height = true
+scroll_active = false
 
 [node name="Score" type="Label" parent="."]
-margin_left = 671.0
+margin_left = 545.0
 margin_top = 17.0
-margin_right = 756.0
+margin_right = 630.0
 margin_bottom = 65.0
 custom_fonts/font = SubResource( 3 )
 text = "13"

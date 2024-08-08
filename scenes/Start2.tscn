@@ -99,7 +99,6 @@ tracks/0/keys = {
 }
 
 [node name="Start2" type="MeshInstance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 script = ExtResource( 2 )
 
