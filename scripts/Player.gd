@@ -107,9 +107,11 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if captured:
 			captured = false
+			GlobalVariables.show_exitpanal = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			captured = true
+			GlobalVariables.show_exitpanal = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if not captured:

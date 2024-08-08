@@ -7,6 +7,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$ExitPanel.visible = false
 	GlobalSignal.connect("start_timer", self, "_start_timer")
 	GlobalSignal.connect("stop_timer", self, "_stop_timer")
 
@@ -28,7 +29,10 @@ func _process(delta):
 #		GlobalVariables.time = 0 
 #	else:
 	$Time.text = "Time : " + $Stopwatch.time_to_string()
-	
+	if GlobalVariables.show_exitpanal:
+		$ExitPanel.visible = true
+	else:
+		$ExitPanel.visible = false
 	
 #func _on_Timer2_timeout():
 #	GlobalVariables.time += 1
@@ -36,3 +40,8 @@ func _process(delta):
 #
 #func _on_Timer_timeout():
 #	GlobalVariables.time += 1
+
+
+func _on_MenuButton_pressed():
+	get_tree().change_scene("res://scenes/Menu.tscn")
+	GlobalVariables.show_exitpanal = false
