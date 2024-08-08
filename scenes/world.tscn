@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://scenes/Slide5.tscn" type="PackedScene" id=36]
 [ext_resource path="res://scenes/Start2.tscn" type="PackedScene" id=37]
 [ext_resource path="res://scenes/RoofTile_Plate2.tscn" type="PackedScene" id=38]
+[ext_resource path="res://scenes/Earth.tscn" type="PackedScene" id=39]
 
 [sub_resource type="DynamicFont" id=40]
 size = 466
@@ -63,19 +64,6 @@ extents = Vector3( 1.83198, 8.68254, 1 )
 
 [sub_resource type="BoxShape" id=41]
 extents = Vector3( 1, 1.49047, 1.13976 )
-
-[sub_resource type="CubeMesh" id=66]
-
-[sub_resource type="SpatialMaterial" id=67]
-albedo_color = Color( 0, 0.384314, 1, 1 )
-
-[sub_resource type="ConcavePolygonShape" id=17]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
-
-[sub_resource type="CubeMesh" id=68]
-
-[sub_resource type="SpatialMaterial" id=69]
-albedo_color = Color( 0.831373, 0.282353, 0.945098, 1 )
 
 [sub_resource type="CubeMesh" id=18]
 
@@ -840,28 +828,6 @@ transform = Transform( 1.87533, 0, 0, 0, 1.87533, 0, 0, 0, 1.87533, 0, 5.24517, 
 
 [node name="UI" parent="Player" instance=ExtResource( 3 )]
 
-[node name="Wall2" type="MeshInstance" parent="."]
-transform = Transform( 1.96083, 0, 0, 0, 90.5075, 0, 0, 0, 123.775, 6.20706, 92.8532, -249.99 )
-visible = false
-mesh = SubResource( 66 )
-material/0 = SubResource( 67 )
-
-[node name="StaticBody" type="StaticBody" parent="Wall2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody"]
-shape = SubResource( 17 )
-
-[node name="Wall3" type="MeshInstance" parent="."]
-transform = Transform( 1.96083, 0, 0, 0, 90.5075, 0, 0, 0, 123.775, -6.1036, 92.8532, -249.99 )
-visible = false
-mesh = SubResource( 68 )
-material/0 = SubResource( 69 )
-
-[node name="StaticBody" type="StaticBody" parent="Wall3"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Wall3/StaticBody"]
-shape = SubResource( 17 )
-
 [node name="GameOver" type="Spatial" parent="."]
 transform = Transform( 4.85266, 0, 0, 0, 1, 0, 0, 0, 4.14411, 0.00296831, -4.99992, 0.0971451 )
 
@@ -894,12 +860,15 @@ environment = SubResource( 80 )
 [node name="Stars" type="Spatial" parent="."]
 
 [node name="Star" parent="Stars" instance=ExtResource( 7 )]
-transform = Transform( 0.456908, 0, 0, 0, 0.456908, 0, 0, 0, 0.456908, 3305.36, 2574.03, 63.778 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3305.36, 2574.03, 63.778 )
 skeleton = NodePath("../../WorldEnvironment")
 
 [node name="Start2" parent="Stars" instance=ExtResource( 37 )]
-transform = Transform( -0.51896, 0.606717, -0.602143, -0.199943, 0.598726, 0.775596, 0.831086, 0.522897, -0.189406, -3305.38, 2576.55, -976.468 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3305.38, 2576.55, -976.468 )
 skeleton = NodePath("../../WorldEnvironment")
+
+[node name="Earth" parent="Stars" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1248.35, 3186.49 )
 
 [node name="Ship_walls" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.8494 )
@@ -1075,10 +1044,87 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.3203, -118.769 )
 light_energy = 6.236
 omni_range = 30.9779
 
+[node name="OmniLight27" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.009, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight28" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 109.274, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight29" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.1629, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight30" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.1092, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight31" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0963, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight32" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2731, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight33" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4499, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight34" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8343, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight35" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.888, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight36" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9417, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight37" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.7818, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight38" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -94.9507, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight39" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -114.716, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
+[node name="OmniLight40" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -134.77, 159.473, -433.242 )
+light_energy = 2.368
+omni_range = 77.4975
+
 [node name="OmniLight25" type="OmniLight" parent="Ship_walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.59411, 209.827, -303.351 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 193.106, 232.829, -302.927 )
+visible = false
 light_energy = 6.236
-omni_range = 534.395
+omni_range = 606.371
+
+[node name="OmniLight26" type="OmniLight" parent="Ship_walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -175.851, 232.829, -302.927 )
+visible = false
+light_energy = 6.236
+omni_range = 606.371
 
 [node name="Column_Slim" parent="Ship_walls" instance=ExtResource( 29 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, -2.53052 )
@@ -1487,8 +1533,55 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9928, 2, -108.085 )
 transform = Transform( 2.78675, 0, 0, 0, 2.78675, 0, 0, 0, 2.78675, 0, 14.2277, 27.4535 )
 mesh = SubResource( 84 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.0511657, -0.625784, 0.778317, 0.206105, 0.755944, 0.621345, -0.977191, 0.192207, 0.0902991, 2765.06, 2585.6, 68.4446 )
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 145.28, -356.649 )
+light_color = Color( 0.92549, 0.0705882, 0.192157, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 133.744, -335.648 )
+light_color = Color( 0.0705882, 0.203922, 0.92549, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight3" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 119.25, -312.724 )
+light_color = Color( 0.0705882, 0.92549, 0.462745, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight4" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 103.98, -290.544 )
+light_color = Color( 0.698039, 0.92549, 0.0705882, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight5" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 90.2621, -268.65 )
+light_color = Color( 0.498039, 0.0705882, 0.92549, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight6" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 74.6055, -242.936 )
+light_color = Color( 0.92549, 0.0705882, 0.85098, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight7" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.5763, -212.653 )
+light_color = Color( 0.92549, 0.470588, 0.0705882, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight8" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.5007, -188.674 )
+light_color = Color( 0.576471, 0.92549, 0.0705882, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight9" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.1152, -165.731 )
+light_color = Color( 0.0705882, 0.92549, 0.745098, 1 )
+omni_range = 28.4598
+
+[node name="OmniLight10" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5921, -142.442 )
+light_color = Color( 0.92549, 0.0705882, 0.0705882, 1 )
+omni_range = 28.4598
 
 [connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
 [connection signal="body_entered" from="Ending/WinningArea" to="." method="_on_WinningArea_body_entered"]

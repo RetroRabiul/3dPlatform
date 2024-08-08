@@ -19,8 +19,4 @@ margin_bottom = 57.0
 custom_fonts/font = SubResource( 1 )
 text = "Time : "
 
-[node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-
 [node name="Stopwatch" parent="." instance=ExtResource( 3 )]

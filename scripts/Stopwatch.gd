@@ -3,9 +3,7 @@ class_name Stopwatch
 
 #var time = 0.0
 
-
 func _process(delta):
-	print(GlobalVariables.time)
 	if GlobalVariables.stopped:
 		return
 	GlobalVariables.time += delta
@@ -20,3 +18,4 @@ func time_to_string():
 	var format_string = "%02d : %02d : %02d"
 	var actual_string = format_string % [mint, sec, msec]
 	return actual_string
+

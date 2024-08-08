@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="3d Platform"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalSignal="*res://autoload/global_signal.gd"
 GlobalVariables="*res://autoload/global_variables.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [gui]
 

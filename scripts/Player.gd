@@ -23,9 +23,7 @@ var min_angle:float = -80.0
 
 export var sensitivity: float = 0.2
 
-
 var captured: bool = true
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -103,7 +101,6 @@ func _physics_process(delta):
 #
 	var snap = Vector3.DOWN if not jumping else Vector3.ZERO
 	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true)
-#
 	
 	
 func _input(event):

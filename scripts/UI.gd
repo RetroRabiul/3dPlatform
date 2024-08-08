@@ -18,6 +18,7 @@ func _start_timer():
 
 func _stop_timer():
 	GlobalVariables.stopped = true
+	print(GlobalVariables.time)
 #	GlobalVariables.can_collide = false
 #	GlobalSignal.emit_signal("collider")
 
@@ -26,9 +27,9 @@ func _process(delta):
 #	if GlobalVariables.stopped:
 #		GlobalVariables.time = 0 
 #	else:
-	$Time.text = $Stopwatch.time_to_string()
+	$Time.text = "Time : " + $Stopwatch.time_to_string()
 	
-#
+	
 #func _on_Timer2_timeout():
 #	GlobalVariables.time += 1
 
