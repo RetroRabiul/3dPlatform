@@ -133,7 +133,14 @@ func clear_leaderboard():
 
 
 func _on_CloseButton_pressed():
+	$ButtonSound.play()
+	yield($ButtonSound,"finished")
+	call_deferred("_cng_scn")
+	
+
+func _cng_scn():
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
 	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
 	#global.reset()
-	get_tree().change_scene(scene_name)
+	get_tree().change_scene("res://scenes/Menu.tscn")
+

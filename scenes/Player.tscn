@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/Running.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/jump.mp3" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape" id=4]
 
@@ -30,5 +32,11 @@ mesh = SubResource( 5 )
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_CoyoteTimer_timeout"]

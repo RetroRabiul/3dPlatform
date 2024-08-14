@@ -43,5 +43,12 @@ func _process(delta):
 
 
 func _on_MenuButton_pressed():
+	$MenuButton.play()
+	yield($MenuButton,"finished")
 	get_tree().change_scene("res://scenes/Menu.tscn")
 	GlobalVariables.show_exitpanal = false
+
+
+
+
+

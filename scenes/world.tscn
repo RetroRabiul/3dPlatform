@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/world.gd" type="Script" id=2]
@@ -21,7 +21,7 @@
 [ext_resource path="res://scenes/FloorTile_Empty.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/FloorTile_Basic2.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/FloorTile_Side.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/FloorTile_Corner.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/audio/backsound.mp3" type="AudioStream" id=22]
 [ext_resource path="res://scenes/FloorTile_Basic.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/Props_Pod.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/Staircase.tscn" type="PackedScene" id=25]
@@ -39,6 +39,7 @@
 [ext_resource path="res://scenes/Start2.tscn" type="PackedScene" id=37]
 [ext_resource path="res://scenes/RoofTile_Plate2.tscn" type="PackedScene" id=38]
 [ext_resource path="res://scenes/Earth.tscn" type="PackedScene" id=39]
+[ext_resource path="res://assets/audio/playerdied.mp3" type="AudioStream" id=40]
 
 [sub_resource type="DynamicFont" id=40]
 size = 466
@@ -54,7 +55,7 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="SpatialMaterial" id=81]
 flags_transparent = true
-albedo_color = Color( 0, 0, 0, 0.807843 )
+albedo_color = Color( 0.054902, 0.054902, 0.054902, 0.807843 )
 
 [sub_resource type="PlaneMesh" id=82]
 material = SubResource( 81 )
@@ -71,7 +72,7 @@ extents = Vector3( 1, 21.412, 1.14 )
 albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=22]
-extents = Vector3( 224.392, 0.759692, 235.512 )
+extents = Vector3( 106.916, 0.759692, 121.56 )
 
 [sub_resource type="BoxShape" id=76]
 extents = Vector3( 0.626252, 1.12884, 1 )
@@ -832,16 +833,17 @@ transform = Transform( 1.87533, 0, 0, 0, 1.87533, 0, 0, 0, 1.87533, 0, 5.24517, 
 transform = Transform( 4.85266, 0, 0, 0, 1, 0, 0, 0, 4.14411, 0.00296831, -4.99992, 0.0971451 )
 
 [node name="GameOver" type="MeshInstance" parent="GameOver"]
-transform = Transform( 223.567, 0, 0, 0, -0.653145, 0, 0, 0, 233.415, 0, 0, -122.325 )
+transform = Transform( 94.3654, 0, 0, 0, -0.653145, 0, 0, 0, 120.468, 0, 0, -69.6461 )
 visible = false
 mesh = SubResource( 18 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 19 )
 
 [node name="Area" type="Area" parent="GameOver"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.800193, -19.9247, 0, 2.8157 )
 
 [node name="CollisionShape" type="CollisionShape" parent="GameOver/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38371, -125.643 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38371, -70.2152 )
 shape = SubResource( 22 )
 
 [node name="SlideArea" type="Area" parent="."]
@@ -926,7 +928,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, 
 
 [node name="OmniLight" type="OmniLight" parent="Ship_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 17.4695 )
-light_energy = 6.236
+light_energy = 6.273
 omni_range = 26.148
 
 [node name="OmniLight2" type="OmniLight" parent="Ship_walls"]
@@ -1235,21 +1237,6 @@ transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.7, 2
 
 [node name="FloorTiles" type="Spatial" parent="Ship_Floor"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 70 )
-
-[node name="FloorTile_Empty" parent="Ship_Floor/FloorTiles" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -146.827 )
-
-[node name="FloorTile_Basic" parent="Ship_Floor/FloorTiles" instance=ExtResource( 23 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -108.129 )
-
-[node name="FloorTile_Basic2" parent="Ship_Floor/FloorTiles" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63.9209 )
-
-[node name="FloorTile_Corner" parent="Ship_Floor/FloorTiles" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -13.9079, 0, -65.9664 )
-
-[node name="FloorTile_InnerCorner" parent="Ship_Floor/FloorTiles" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -79.6715 )
 
 [node name="FloorTile_Double_Hallway" parent="Ship_Floor/FloorTiles" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 47.5305 )
@@ -1582,6 +1569,12 @@ omni_range = 28.4598
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5921, -142.442 )
 light_color = Color( 0.92549, 0.0705882, 0.0705882, 1 )
 omni_range = 28.4598
+
+[node name="background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+
+[node name="playerdied" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 40 )
 
 [connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
 [connection signal="body_entered" from="Ending/WinningArea" to="." method="_on_WinningArea_body_entered"]

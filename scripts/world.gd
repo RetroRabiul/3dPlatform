@@ -1,24 +1,18 @@
 extends Spatial
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var finished: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$background.play()
 	$"%EndSlideCollision".disabled = false
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("player"):
+		$playerdied.play()
+		yield($playerdied, "finished")
 		get_tree().change_scene("res://scenes/world.tscn")
 		GlobalVariables.time = 0
 		GlobalVariables.stopped = true
@@ -49,3 +43,4 @@ func _on_StopSlide_body_exited(body):
 func _on_SlideArea_body_entered(body):
 	if body.is_in_group("player"):
 		GlobalSignal.emit_signal("start_sliding")
+

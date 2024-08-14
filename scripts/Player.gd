@@ -23,6 +23,8 @@ var min_angle:float = -80.0
 
 export var sensitivity: float = 0.2
 
+var stop_sounds = false
+
 var captured: bool = true
 
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +32,7 @@ func _ready():
 	
 	GlobalSignal.connect("start_sliding", self, "_start_sliding")
 	GlobalSignal.connect("reset", self, "_reset")
+	
 #	GlobalSignal.connect("collider", self, "_collider")
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -50,8 +53,10 @@ func _reset():
 	gravity = 50
 	canjump = true
 	GlobalVariables.time = 0
+	stop_sounds = false
 
 func _start_sliding():
+	stop_sounds = true
 	gravity = 1000
 	canjump = false
 #	velocity.z = 500
@@ -84,7 +89,8 @@ func _physics_process(delta):
 		$CoyoteTimer.start()
 	
 	
-	if Input.is_action_just_pressed("jump") and canjump:
+	if Input.is_action_just_pressed("jump") and canjump and !stop_sounds:
+		$jump.play()
 		canjump = false
 		jumping = true
 		velocity.y = jump
@@ -101,7 +107,17 @@ func _physics_process(delta):
 #
 	var snap = Vector3.DOWN if not jumping else Vector3.ZERO
 	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true)
-	
+
+	_walking_sound()
+
+
+func _walking_sound():
+	if abs(velocity.x + velocity.z) > 10.0: 
+		if not $walking.playing && is_on_floor() && !stop_sounds:
+			$walking.play()
+	else:
+		$walking.stop()
+
 	
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
