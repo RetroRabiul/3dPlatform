@@ -14,7 +14,6 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=4]
 size = 100
 extra_spacing_top = 5
-extra_spacing_char = 25
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -49,9 +48,9 @@ self_modulate = Color( 0.360784, 0.666667, 1, 0.968627 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -511.0
-margin_top = 281.0
+margin_top = 318.0
 margin_right = -124.0
-margin_bottom = 406.0
+margin_bottom = 443.0
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
 
@@ -61,11 +60,11 @@ self_modulate = Color( 0.295898, 0.633157, 1, 0.968627 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -511.0
-margin_top = 428.0
+margin_top = 462.0
 margin_right = -27.0
-margin_bottom = 553.0
+margin_bottom = 587.0
 custom_fonts/font = SubResource( 4 )
-text = "SCORE"
+text = "Leaderboard"
 
 [node name="NameDialog" type="Panel" parent="."]
 modulate = Color( 0.286275, 0.882353, 1, 0.819608 )
@@ -73,9 +72,9 @@ anchor_left = 0.384
 anchor_right = 0.645
 anchor_bottom = 0.063
 margin_left = 10.784
-margin_top = 298.0
+margin_top = 340.0
 margin_right = 56.52
-margin_bottom = 332.2
+margin_bottom = 374.2
 
 [node name="NameInput" type="TextEdit" parent="NameDialog"]
 margin_left = 66.0
@@ -95,10 +94,10 @@ text = "NAME : "
 
 [node name="NeedName" type="Label" parent="."]
 visible = false
-margin_left = 115.0
-margin_top = 200.0
-margin_right = 635.0
-margin_bottom = 251.0
+margin_left = 45.0
+margin_top = 247.0
+margin_right = 565.0
+margin_bottom = 298.0
 custom_colors/font_color = Color( 0.470588, 1, 0.87451, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Must Type Your Name"
@@ -108,10 +107,10 @@ stream = ExtResource( 3 )
 
 [node name="GameName" type="Label" parent="."]
 modulate = Color( 0, 0.388235, 1, 0.611765 )
-margin_left = 29.0
-margin_top = 32.0
-margin_right = 648.0
-margin_bottom = 261.0
+margin_left = 9.0
+margin_top = 6.0
+margin_right = 628.0
+margin_bottom = 235.0
 custom_fonts/font = SubResource( 8 )
 text = "Starry 
            Slide"

@@ -58,14 +58,12 @@ custom_constants/separation = 0
 [node name="MessageContainer" type="CenterContainer" parent="ScrollContainer/Board"]
 unique_name_in_owner = true
 visible = false
-margin_top = 89.0
-margin_right = 1864.0
-margin_bottom = 126.0
+margin_right = 286.0
+margin_bottom = 37.0
 
 [node name="TextMessage" type="Label" parent="ScrollContainer/Board/MessageContainer"]
 unique_name_in_owner = true
-margin_left = 789.0
-margin_right = 1075.0
+margin_right = 286.0
 margin_bottom = 37.0
 custom_fonts/font = SubResource( 2 )
 text = "Loading scores..."

@@ -11,3 +11,5 @@ var can_collide = false
 var player_name = ""
 
 var show_exitpanal = false
+
+var difficulty = ""

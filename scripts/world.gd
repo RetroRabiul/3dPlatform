@@ -19,18 +19,15 @@ func _on_Area_body_entered(body):
 		GlobalVariables.can_collide = false
 
 
-func _on_Timer_Starts_body_entered(body):
-	if body.is_in_group("player"):
-		finished = false
-		GlobalSignal.emit_signal("start_timer")
-
-
 func _on_WinningArea_body_entered(body):
 	if body.is_in_group("player") and not finished:
 		finished = true
 		GlobalSignal.emit_signal("stop_timer")
 		$"%EndSlideCollision".disabled = true
-		SilentWolf.Scores.persist_score(GlobalVariables.player_name,GlobalVariables.time)
+		
+		var name_to_use = GlobalVariables.player_name + "-" + GlobalVariables.difficulty
+		
+		SilentWolf.Scores.persist_score(name_to_use,GlobalVariables.time)
 
 
 func _on_StopSlide_body_exited(body):
@@ -44,3 +41,16 @@ func _on_SlideArea_body_entered(body):
 	if body.is_in_group("player"):
 		GlobalSignal.emit_signal("start_sliding")
 
+
+func _on_Easy_Timer_body_entered(body):
+	if body.is_in_group("player"):
+		GlobalVariables.difficulty = "E"
+		finished = false
+		GlobalSignal.emit_signal("start_timer")
+
+
+func _on_Hard_Timer_body_entered(body):
+	if body.is_in_group("player"):
+		GlobalVariables.difficulty = "H"
+		finished = false
+		GlobalSignal.emit_signal("start_timer")

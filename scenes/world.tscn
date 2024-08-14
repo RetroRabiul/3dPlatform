@@ -203,15 +203,17 @@ mesh = SubResource( 82 )
 
 [node name="Areas" type="Spatial" parent="Start"]
 
-[node name="Timer_Starts" type="Area" parent="Start/Areas"]
+[node name="Easy_Timer" type="Area" parent="Start/Areas"]
 transform = Transform( 2.89558, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -120.445 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Start/Areas/Timer_Starts"]
+[node name="CollisionShape" type="CollisionShape" parent="Start/Areas/Easy_Timer"]
 transform = Transform( 1, 0, 0, 0, 0.674981, 0, 0, 0, 1, -6.83, 5, 1.342 )
 shape = SubResource( 25 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="Start/Areas/Timer_Starts"]
-transform = Transform( 1, 0, 0, 0, 0.674981, 0, 0, 0, 1, 6.92, 5, 1.342 )
+[node name="Hard_Timer" type="Area" parent="Start/Areas"]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Start/Areas/Hard_Timer"]
+transform = Transform( 2.89558, 0, 0, 0, 0.674981, 0, 0, 0, 1, 20.0374, 5, -119.103 )
 shape = SubResource( 25 )
 
 [node name="Ending" type="Spatial" parent="."]
@@ -1518,6 +1520,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9928, 2, -108.085 )
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
 transform = Transform( 2.78675, 0, 0, 0, 2.78675, 0, 0, 0, 2.78675, 0, 14.2277, 27.4535 )
+visible = false
 mesh = SubResource( 84 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
@@ -1576,7 +1579,8 @@ stream = ExtResource( 22 )
 [node name="playerdied" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 40 )
 
-[connection signal="body_entered" from="Start/Areas/Timer_Starts" to="." method="_on_Timer_Starts_body_entered"]
+[connection signal="body_entered" from="Start/Areas/Easy_Timer" to="." method="_on_Easy_Timer_body_entered"]
+[connection signal="body_entered" from="Start/Areas/Hard_Timer" to="." method="_on_Hard_Timer_body_entered"]
 [connection signal="body_entered" from="Ending/WinningArea" to="." method="_on_WinningArea_body_entered"]
 [connection signal="body_entered" from="GameOver/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="SlideArea" to="." method="_on_SlideArea_body_entered"]
