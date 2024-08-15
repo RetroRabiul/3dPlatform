@@ -45,36 +45,35 @@ texture = ExtResource( 2 )
 [node name="Play" type="Button" parent="."]
 modulate = Color( 0, 0.952941, 1, 0.517647 )
 self_modulate = Color( 0.360784, 0.666667, 1, 0.968627 )
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -511.0
-margin_top = 318.0
-margin_right = -124.0
-margin_bottom = 443.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 5.0
+margin_right = 387.0
+margin_bottom = 130.0
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
 
 [node name="Scores" type="Button" parent="."]
 modulate = Color( 0, 0.952941, 1, 0.517647 )
 self_modulate = Color( 0.295898, 0.633157, 1, 0.968627 )
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -511.0
-margin_top = 462.0
-margin_right = -27.0
-margin_bottom = 587.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 156.0
+margin_right = 712.0
+margin_bottom = 281.0
 custom_fonts/font = SubResource( 4 )
 text = "Leaderboard"
 
 [node name="NameDialog" type="Panel" parent="."]
 modulate = Color( 0.286275, 0.882353, 1, 0.819608 )
-anchor_left = 0.384
-anchor_right = 0.645
-anchor_bottom = 0.063
-margin_left = 10.784
-margin_top = 340.0
-margin_right = 56.52
-margin_bottom = 374.2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.0
+margin_top = 50.0
+margin_right = 205.0
+margin_bottom = 122.0
 
 [node name="NameInput" type="TextEdit" parent="NameDialog"]
 margin_left = 66.0
@@ -93,11 +92,12 @@ custom_fonts/font = SubResource( 6 )
 text = "NAME : "
 
 [node name="NeedName" type="Label" parent="."]
-visible = false
-margin_left = 45.0
-margin_top = 247.0
-margin_right = 565.0
-margin_bottom = 298.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 47.0
+margin_top = -66.0
+margin_right = 567.0
+margin_bottom = -15.0
 custom_colors/font_color = Color( 0.470588, 1, 0.87451, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Must Type Your Name"
@@ -107,10 +107,8 @@ stream = ExtResource( 3 )
 
 [node name="GameName" type="Label" parent="."]
 modulate = Color( 0, 0.388235, 1, 0.611765 )
-margin_left = 9.0
-margin_top = 6.0
-margin_right = 628.0
-margin_bottom = 235.0
+margin_right = 619.0
+margin_bottom = 229.0
 custom_fonts/font = SubResource( 8 )
 text = "Starry 
            Slide"

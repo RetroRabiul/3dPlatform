@@ -77,11 +77,11 @@ func _physics_process(delta):
 #		velocity.y -= gravity * delta
 #	else:
 #		velocity.y -= 0.03 * delta
-	if Input.is_action_just_pressed("cng_pos") && is_on_floor():
-		translation.y = 150
-		translation.z = -383.072
-		
-	
+#	if Input.is_action_just_pressed("cng_pos") && is_on_floor():
+#		translation.y = 150
+#		translation.z = -383.072
+#
+#
 	if is_on_floor():
 		$CoyoteTimer.stop()
 		canjump = true
