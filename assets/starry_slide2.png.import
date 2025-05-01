@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/1.png-1b87507a0d6cfeec9690a1dbbc640c91.s3tc.stex"
-path.etc2="res://.import/1.png-1b87507a0d6cfeec9690a1dbbc640c91.etc2.stex"
+path.s3tc="res://.import/starry_slide2.png-ce1004dc3f3fc92040983c59a16f8d5d.s3tc.stex"
+path.etc2="res://.import/starry_slide2.png-ce1004dc3f3fc92040983c59a16f8d5d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/pics/1.png"
-dest_files=[ "res://.import/1.png-1b87507a0d6cfeec9690a1dbbc640c91.s3tc.stex", "res://.import/1.png-1b87507a0d6cfeec9690a1dbbc640c91.etc2.stex" ]
+source_file="res://assets/starry_slide2.png"
+dest_files=[ "res://.import/starry_slide2.png-ce1004dc3f3fc92040983c59a16f8d5d.s3tc.stex", "res://.import/starry_slide2.png-ce1004dc3f3fc92040983c59a16f8d5d.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true

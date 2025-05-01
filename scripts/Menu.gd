@@ -13,7 +13,7 @@ export var player_name: String
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$NeedName.visible = false
-
+	
 
 func _input(event):
 	if Input.is_action_just_pressed("add-score"):
@@ -55,3 +55,8 @@ func _Change_scene():
 	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 	
 
+
+
+func _on_NameInput_text_changed():
+	if $NameDialog/NameInput.text.length() > 1:
+		$Play.disabled = false

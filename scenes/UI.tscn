@@ -34,11 +34,12 @@ anchor_right = 1.0
 margin_left = -118.0
 margin_bottom = 57.0
 custom_fonts/font = SubResource( 2 )
-text = "Esc"
+text = "Tab"
 
 [node name="Stopwatch" parent="." instance=ExtResource( 3 )]
 
 [node name="ExitPanel" type="Panel" parent="."]
+visible = false
 modulate = Color( 0, 0.384314, 1, 1 )
 anchor_left = 0.5
 anchor_top = 0.5

@@ -120,7 +120,7 @@ func _walking_sound():
 
 	
 func _input(event):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("mouse"):
 		if captured:
 			captured = false
 			GlobalVariables.show_exitpanal = true

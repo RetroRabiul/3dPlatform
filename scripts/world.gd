@@ -15,6 +15,7 @@ func _on_Area_body_entered(body):
 		yield($playerdied, "finished")
 		get_tree().change_scene("res://scenes/world.tscn")
 		GlobalVariables.time = 0
+		GlobalVariables.difficulty = ""
 		GlobalVariables.stopped = true
 		GlobalVariables.can_collide = false
 

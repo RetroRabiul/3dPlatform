@@ -47,6 +47,8 @@ func _on_MenuButton_pressed():
 	yield($MenuButton,"finished")
 	get_tree().change_scene("res://scenes/Menu.tscn")
 	GlobalVariables.show_exitpanal = false
+	_stop_timer()
+	GlobalVariables.time = 0.0
 
 
 
