@@ -55,8 +55,6 @@ func _Change_scene():
 	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 	
 
-
-
 func _on_NameInput_text_changed():
 	if $NameDialog/NameInput.text.length() > 1:
 		$Play.disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/pics/2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/space_bg/panorama_image (1).png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/OTF/SpaceGrotesk-SemiBold.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/fonts/OTF/SpaceGrotesk-Bold.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://scenes/Star.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=2]
 size = 55
@@ -101,7 +102,7 @@ anchor_bottom = 0.5
 margin_left = -351.0
 margin_top = 57.0
 margin_right = -55.0
-margin_bottom = 140.0
+margin_bottom = 153.0
 custom_fonts/font = SubResource( 2 )
 disabled = true
 text = "PLAY"
@@ -189,6 +190,9 @@ environment = SubResource( 9 )
 transform = Transform( 0.0401271, 0, 0, 0, 0.0401271, 0, 0, 0, 0.0401271, 41.0978, 21.5968, -40.829 )
 skeleton = NodePath("../..")
 
+[node name="Star" parent="3dMenu" instance=ExtResource( 9 )]
+transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, -61.98, -19.846, -74.037 )
+
 [node name="Game Name" type="Spatial" parent="3dMenu"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79532, 0.969318, -1.27254 )
 
@@ -201,6 +205,9 @@ material/0 = SubResource( 11 )
 transform = Transform( 2.2377, 0.103427, -0.0569712, -0.0362442, -0.427338, -2.19938, -0.112379, 2.19725, -0.425071, -3.21905, 0.477545, -0.459731 )
 mesh = SubResource( 12 )
 material/0 = SubResource( 11 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="3dMenu"]
+transform = Transform( 0.308818, 0.838892, 0.448209, 0.612284, -0.535955, 0.581257, 0.727832, 0.0949286, -0.679153, 0, 0.363477, 0 )
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Scores" to="." method="_on_Scores_pressed"]
